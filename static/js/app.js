@@ -1,6 +1,6 @@
 function dropDown(){
     var seldropDown = d3.select("#selDataset")
-    d3.json("./samples.json").then((data) => {
+    d3.json("../../data/samples.json").then((data) => {
         console.log(data);
         var sampleNames = data.names;
         sampleNames.forEach((sample) => {
@@ -16,7 +16,7 @@ function dropDown(){
 dropDown()
 
 function metaData(id){
-    d3.json("./samples.json").then((data) => {
+    d3.json("../../data/samples.json").then((data) => {
         console.log(data);
         var resultArray = data.metadata.filter(object => object.id == id);
         var result = resultArray[0];
@@ -33,7 +33,7 @@ function optionChanged (samples) {
     
 }
 function createCharts(id){
-    d3.json("./samples.json").then((data) => {
+    d3.json("../../data/samples.json").then((data) => {
         console.log(data);
         var result = data.samples.find(object => object.id == id);
         console.log(result);
